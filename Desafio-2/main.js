@@ -1,4 +1,5 @@
-const fs = require("fs");
+const fs = require('fs');
+const express = require('express');
 class Contenedor {
   constructor(fileName) {
     this.nameFile = fileName;
@@ -8,7 +9,7 @@ class Contenedor {
      try {
       const data = await fs.promises.readFile(this.nameFile, "utf-8");
       array = JSON.parse(data);
-      let idArray = array.map((obj) => obj.id);
+      let idArray = array.map(obj => obj.id);
       let idp = Math.max(...idArray);
       object.id = idp + 1;
       array.push(object);
@@ -57,11 +58,30 @@ class Contenedor {
     fs.writeFileSync(this.nameFile, "");
   }
 }
-const newArchivo = new Contenedor("./test.txt");
-newArchivo
-  .save({ title: "La Vaca lola", price: 100000, thumbnail: "vaca.png" })
-  .then((resolve) => console.log(resolve));
-newArchivo.getById().then((resolve) => console.log(resolve));
-newArchivo.getAll().then((resolve) => console.log(resolve));
-newArchivo.deleteById(2);
-newArchivo.deleteAll();
+const newArchivo = new Contenedor("./productos.txt");
+const app = express();
+
+const PORT = 8080
+
+const server = app.listen(PORT, () => {
+  console.log(`Servidor http escuchando en el puerto ${server.address().port}`)
+})
+
+
+server.on("error", error => console.log(`Error en servidor ${error}`))
+
+app.get('/', (req, res) => {
+    res.end("Bienvenidos")
+})
+app.get('/productos', (req, res) => {
+    newArchivo.getAll().then(resolve => {
+        res.end(`todo los productos: ${JSON.stringify(resolve)}`)
+    });
+
+})
+app.get('/productosRandom', (req, res) => {
+    let aleaTorio = parseInt((Math.random() * 4) + 1)
+    newArchivo.getById(aleaTorio).then(resolve => {
+        res.end(`producto random: ${JSON.stringify(resolve)}`)
+    });
+})
