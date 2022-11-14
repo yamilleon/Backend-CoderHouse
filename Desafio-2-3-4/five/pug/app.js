@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.set("view engine", "ejs");
+app.set("view engine", "pug");
+app.set("views", "./views")
 
 app.use("/static", express.static(__dirname + "public"))
 
@@ -25,10 +26,10 @@ const handleVerify=(atributo)=>{
 const productos = []
 
 productosRouter.get("/", (req, res) => {
-    res.render("pages/productos", {productos})
+    res.render("productos", {productos})
 })
 app.get("/", (req, res) => {
-    res.render("pages/form",{titlePage:"Formulario"})
+    res.render("form",{titlePage:"Formulario"})
 })
 productosRouter.post("/", (req, res) => {
     let objeto = req.body;

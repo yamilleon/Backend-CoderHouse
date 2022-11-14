@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+.listaMsg {
+    list-style: none;
+}
+
+.userName {
+    color: green;
+}
+
+.userDate {
+    color: #BC5B8C;
+}
+
+.userMsg {
+    display: inline-block;
+    font-style: oblique;
+    color: #f217bf;
+}
+
+.letra{
+    font-family: 'Poppins', sans-serif;
+}
