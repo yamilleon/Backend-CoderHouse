@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Esto es prueba put",
+        "description": "lorem insup taka taka",
+        "stock": 20,
+        "price": 213,
+        "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_664830-MLA51740457531_092022-F.webp",
+        "code": 63,
+        "date": "09/11/2022 08:37:39",
+        "id": 0
+    },
+    {
+        "title": "Esto es prueba put",
+        "description": "lorem insup taka taka",
+        "stock": 20,
+        "price": 213,
+        "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_664830-MLA51740457531_092022-F.webp",
+        "code": 94,
+        "date": "10/11/2022 22:36:43",
+        "id": 1
+    },
+    {
+        "title": "Esto es prueba put",
+        "description": "lorem insup taka taka",
+        "stock": 20,
+        "price": 213,
+        "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_664830-MLA51740457531_092022-F.webp",
+        "code": 15,
+        "date": "10/11/2022 22:36:44",
+        "id": 2
+    }
+]
